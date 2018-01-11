@@ -1,17 +1,30 @@
 import React from 'react';
 import Radium from 'radium';
 import office_01_1920 from '../images/office_01_1920.jpeg';
+import handleScroll from '../lib/handleScroll';
 
+import Square from './Square';
 import Title from './Title';
+
+///////   ///////  ///   //  //////    ///////  ///////
+//    //  //       ////  //  //   //   //       //    //
+///////   /////    // // //  //    //  /////    ///////
+//  //    //       //  ////  //   //   //       //  //
+//   //   ///////  //   ///  //////    ///////  //   //
 
 const Home = () => {
   return (
-    <section style={styles.home}>
+    <section style={styles.home} onWheel={handleScroll}>
       <div style={styles.cover}></div>
+      <Square />
       <Title />
     </section>
   );
 }
+
+/* ===================================
+    STYLES
+   =================================== */
 
 const styles = {
   home: {
