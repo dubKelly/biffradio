@@ -1,17 +1,21 @@
 import React from 'react';
-// import { Provider } from 'react-redux';
+import Radium, { StyleRoot } from 'radium';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from '../components/Home';
 
 const App = () => {
   return (
-    // <Provider store={store}>
+    <StyleRoot style={styles}>
       <Router>
         <Route path={'/'} component={Home} />
       </Router>
-    // </Provider>
+    </StyleRoot>
   );
 }
 
-export default App;
+const styles = {
+  height: '100%'
+}
+
+export default Radium(App);

@@ -1,6 +1,12 @@
 import React from 'react';
 import radium from '../lib/radiumConfig';
 
+///////   ///////  ///   //  //////    ///////  ///////
+//    //  //       ////  //  //   //   //       //    //
+///////   /////    // // //  //    //  /////    ///////
+//  //    //       //  ////  //   //   //       //  //
+//   //   ///////  //   ///  //////    ///////  //   //
+
 const Ex = (props) => {
   return (
     <div>
@@ -9,6 +15,12 @@ const Ex = (props) => {
     </div>
   );
 }
+
+ /////  ///////  //   //  //       ///////   /////
+//        //      // //   //       //       //
+ ////     //       //     //       /////     ////
+    //    //       //     //       //           //
+/////     //       //     ///////  ///////  /////
 
 const styles = {
   base: {
@@ -19,18 +31,28 @@ const styles = {
     height: '2px',
     width: '60px',
     backgroundColor: '#33d9cb',
-    transition: 'transform 0.4s ease-in-out'
+    transition: 'all 0.4s ease-in-out',
+    '@media only screen and (max-height: 400px)': {
+      top: '48px',
+      width: '40px'
+    }
   },
   pos: {
     transform: 'translateX(-50%) rotate(45deg)',
     true: {
-      transform: 'translateX(-50%) rotate(45deg) scale(14, 1)'
+      transform: 'translateX(-50%) rotate(45deg) scale(14, 1)',
+      '@media only screen and (max-height: 400px)': {
+        opacity: '0.3'
+      }
     }
   },
   neg: {
     transform: 'translateX(-50%) rotate(-45deg)',
     true: {
-      transform: 'translateX(-25%) rotate(45deg) scale(3, 1)'
+      transform: 'translateX(-25%) rotate(45deg) scale(3, 1)',
+      '@media only screen and (max-height: 400px)': {
+        opacity: '0.3'
+      }
     }
   }
 }

@@ -49,7 +49,6 @@ class Home extends React.Component {
     //    //       //     //       //           //
 /////     //       //     ///////  ///////  /////
 
-
 const styles = {
   home: {
     backgroundImage: `url(${office_01_1920})`,
