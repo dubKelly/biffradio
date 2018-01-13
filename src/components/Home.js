@@ -1,10 +1,25 @@
 import React from 'react';
-import Radium from 'radium';
+import radium from '../lib/radiumConfig';
 import office_01_1920 from '../images/office_01_1920.jpeg';
 import handleScroll from '../lib/handleScroll';
 
-import Square from './Square';
+import Diamond from './Diamond';
+import Ex from './Ex';
 import Title from './Title';
+import Burger from './Burger';
+
+class Home extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      menu: false
+    }
+  }
+
+  toggleMenu() {
+    let menu = !this.state.menu;
+    this.setState({ menu });
+  }
 
 ///////   ///////  ///   //  //////    ///////  ///////
 //    //  //       ////  //  //   //   //       //    //
@@ -12,19 +27,28 @@ import Title from './Title';
 //  //    //       //  ////  //   //   //       //  //
 //   //   ///////  //   ///  //////    ///////  //   //
 
-const Home = () => {
-  return (
-    <section style={styles.home} onWheel={handleScroll}>
-      <div style={styles.cover}></div>
-      <Square />
-      <Title />
-    </section>
-  );
+  render() {
+    return (
+      <section style={styles.home} onWheel={handleScroll}>
+        <div style={styles.cover}></div>
+        <Diamond menu={this.state.menu} />
+        <Ex menu={this.state.menu}/>
+        <Title menu={this.state.menu}/>
+        <Burger
+          menu={this.state.menu}
+          toggleMenu={this.toggleMenu.bind(this)}
+        />
+      </section>
+    );
+  }
 }
 
-/* ===================================
-    STYLES
-   =================================== */
+ /////  ///////  //   //  //       ///////   /////
+//        //      // //   //       //       //
+ ////     //       //     //       /////     ////
+    //    //       //     //       //           //
+/////     //       //     ///////  ///////  /////
+
 
 const styles = {
   home: {
@@ -40,4 +64,4 @@ const styles = {
   }
 }
 
-export default Radium(Home);
+export default radium(Home);

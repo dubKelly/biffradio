@@ -1,8 +1,8 @@
 import React from 'react';
-import Radium from 'radium';
+import radium from '../lib/radiumConfig';
 
-const Title = () => {
-  return <h1 style={styles}>biff.</h1>
+const Title = (props) => {
+  return <h1 style={[styles, styles[props.menu]]}>biff.</h1>
 }
 
 const styles = {
@@ -13,6 +13,10 @@ const styles = {
   fontSize: '64px',
   fontWeight: '700',
   color: 'white',
+  transition: 'transform 0.4s ease-in-out',
+  true: {
+    transform: 'translate(-100%, -150%)'
+  }
 }
 
-export default Radium(Title);
+export default radium(Title);

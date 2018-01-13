@@ -1,8 +1,8 @@
 import React from 'react';
 import Radium from 'radium';
 
-const Square = () => {
-  return <div style={styles}></div>;
+const Diamond = (props) => {
+  return <div style={[styles, styles[props.menu]]}></div>;
 }
 
 const styles = {
@@ -13,6 +13,10 @@ const styles = {
   top: '0',
   left: '50%',
   transform: 'translate(-50%, -60%) rotate(45deg)',
+  transition: 'transform 0.4s ease-in-out',
+  true: {
+    transform: 'translate(30%, 20%) rotate(45deg)'
+  }
 }
 
-export default Radium(Square);
+export default Radium(Diamond);
