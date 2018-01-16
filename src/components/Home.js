@@ -6,7 +6,9 @@ import handleScroll from '../lib/handleScroll';
 import Diamond from './Diamond';
 import Ex from './Ex';
 import Title from './Title';
+import Nav from './Nav';
 import Burger from './Burger';
+import RadioLink from './RadioLink';
 
 class Home extends React.Component {
   constructor() {
@@ -32,12 +34,14 @@ class Home extends React.Component {
       <section style={styles.home} onWheel={handleScroll}>
         <div style={styles.cover}></div>
         <Diamond menu={this.state.menu} />
-        <Ex menu={this.state.menu}/>
-        <Title menu={this.state.menu}/>
+        <Ex menu={this.state.menu} />
+        <Title menu={this.state.menu} />
+        <Nav menu={this.state.menu} />
         <Burger
           menu={this.state.menu}
           toggleMenu={this.toggleMenu.bind(this)}
         />
+        <RadioLink />
       </section>
     );
   }

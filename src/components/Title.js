@@ -1,6 +1,12 @@
 import React from 'react';
 import radium from '../lib/radiumConfig';
 
+///////   ///////  ///   //  //////    ///////  ///////
+//    //  //       ////  //  //   //   //       //    //
+///////   /////    // // //  //    //  /////    ///////
+//  //    //       //  ////  //   //   //       //  //
+//   //   ///////  //   ///  //////    ///////  //   //
+
 const Title = (props) => {
   return (
     <div>
@@ -9,6 +15,12 @@ const Title = (props) => {
     </div>
   );
 }
+
+ /////  ///////  //   //  //       ///////   /////
+//        //      // //   //       //       //
+ ////     //       //     //       /////     ////
+    //    //       //     //       //           //
+/////     //       //     ///////  ///////  /////
 
 const styles = {
   title: {
@@ -32,7 +44,7 @@ const styles = {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    transform: 'translate(-127px, -20px)',
+    transform: 'translate(-127px, -21px)',
     height: '1px',
     width: '1px',
     backgroundColor: '#33d9cb',
@@ -42,7 +54,7 @@ const styles = {
       transform: 'translate(-189px, -68px)'
     },
     true: {
-      transform: 'translate(-101px, -20px) scale(52, 1)',
+      transform: 'translate(-101px, -21px) scale(52, 1)',
       opacity: '1',
       transition: 'all 0.3s 0.2s ease-in-out',
       '@media only screen and (max-height: 400px)': {
