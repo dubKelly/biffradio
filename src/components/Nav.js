@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import shortid from 'shortid';
 import radium from '../lib/radiumConfig';
 
@@ -9,31 +10,42 @@ for (var i = 0; i < 4; i++) {
   keys.push(shortid.generate());
 }
 
+class Nav extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      
+    }
+  }
+
 ///////   ///////  ///   //  //////    ///////  ///////
 //    //  //       ////  //  //   //   //       //    //
 ///////   /////    // // //  //    //  /////    ///////
 //  //    //       //  ////  //   //   //       //  //
 //   //   ///////  //   ///  //////    ///////  //   //
 
-const Nav = (props) => {
-  return (
-    <div style={styles.navMenu}>
-      <ul>
-        <li style={[styles.li, styles.li[props.menu], styles.nthChild_1[props.menu]]}>
-          <span key={keys[0]} style={[styles.span, styles.span[props.menu]]}>About Us</span>
-        </li>
-        <li style={[styles.li, styles.li[props.menu], styles.nthChild_2[props.menu]]}>
-          <span key={keys[1]} style={[styles.span, styles.span[props.menu]]}>Our Work</span>
-        </li>
-        <li style={[styles.li, styles.li[props.menu], styles.nthChild_3[props.menu]]}>
-          <span key={keys[2]} style={[styles.span, styles.span[props.menu]]}>Meet the Team</span>
-        </li>
-        <li style={[styles.li, styles.li[props.menu], styles.nthChild_4[props.menu]]}>
-          <span key={keys[3]} style={[styles.span, styles.span[props.menu]]}>Contact Us</span>
-        </li>
-      </ul>
-    </div>
-  );
+  render() {
+    return (
+      <div style={styles.navMenu}>
+        <ul>
+          <Link to="/about">
+            <li style={[styles.li, styles.li[this.props.menu], styles.nthChild_1[this.props.menu]]}>
+              <span key={keys[0]} style={[styles.span, styles.span[this.props.menu]]}>About Us</span>
+            </li>
+          </Link>
+          <li style={[styles.li, styles.li[this.props.menu], styles.nthChild_2[this.props.menu]]}>
+            <span key={keys[1]} style={[styles.span, styles.span[this.props.menu]]}>Our Work</span>
+          </li>
+          <li style={[styles.li, styles.li[this.props.menu], styles.nthChild_3[this.props.menu]]}>
+            <span key={keys[2]} style={[styles.span, styles.span[this.props.menu]]}>Meet the Team</span>
+          </li>
+          <li style={[styles.li, styles.li[this.props.menu], styles.nthChild_4[this.props.menu]]}>
+            <span key={keys[3]} style={[styles.span, styles.span[this.props.menu]]}>Contact Us</span>
+          </li>
+        </ul>
+      </div>
+    );
+  }
 }
 
  /////  ///////  //   //  //       ///////   /////
