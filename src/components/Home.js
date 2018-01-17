@@ -9,6 +9,10 @@ import Title from './Title';
 import Nav from './Nav';
 import Burger from './Burger';
 import RadioLink from './RadioLink';
+import About from './About';
+import Work from './Work';
+import Team from './Team';
+import Contact from './Contact';
 
 class Home extends React.Component {
   constructor() {
@@ -31,18 +35,32 @@ class Home extends React.Component {
 
   render() {
     return (
-      <section style={styles.home} onWheel={handleScroll}>
-        <div style={styles.cover}></div>
-        <Diamond menu={this.state.menu} />
-        <Ex menu={this.state.menu} />
-        <Title menu={this.state.menu} />
-        <Nav menu={this.state.menu} />
-        <Burger
-          menu={this.state.menu}
-          toggleMenu={this.toggleMenu.bind(this)}
-        />
-        <RadioLink />
-      </section>
+      <div style={styles.component}>
+        <section style={styles.home} onWheel={handleScroll}>
+          <div style={styles.cover}></div>
+          <Diamond menu={this.state.menu} />
+          <Ex menu={this.state.menu} />
+          <Title menu={this.state.menu} />
+          <Nav menu={this.state.menu} />
+          <Burger
+            menu={this.state.menu}
+            toggleMenu={this.toggleMenu.bind(this)}
+          />
+          <RadioLink />
+        </section>
+        <section style={styles.subSection}>
+          <About />
+        </section>
+        <section style={styles.subSection}>
+          <Work />
+        </section>
+        <section style={styles.subSection}>
+          <Team />
+        </section>
+        <section style={styles.subSection}>
+          <Contact />
+        </section>
+      </div>
     );
   }
 }
@@ -54,6 +72,9 @@ class Home extends React.Component {
 /////     //       //     ///////  ///////  /////
 
 const styles = {
+  component: {
+    height: '100%'
+  },
   home: {
     backgroundImage: `url(${office_01_1920})`,
     backgroundPosition: 'center',
@@ -64,6 +85,11 @@ const styles = {
     height: '100%',
     backgroundColor: '#262626',
     opacity: '0.8'
+  },
+  subSection: {
+    position: 'absolute',
+    height: '100%',
+    top: '100%',
   }
 }
 
