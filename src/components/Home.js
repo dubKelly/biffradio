@@ -2,6 +2,7 @@ import React from 'react';
 import radium from '../lib/radiumConfig';
 import office_01_1920 from '../images/office_01_1920.jpeg';
 import handleScroll from '../lib/handleScroll';
+import { _dark } from '../lib/variables';
 
 import Diamond from './Diamond';
 import Ex from './Ex';
@@ -48,18 +49,18 @@ class Home extends React.Component {
           />
           <RadioLink />
         </section>
-        <section style={styles.subSection}>
+        <div style={styles.subSection}>
           <About />
-        </section>
-        <section style={styles.subSection}>
+        </div>
+        <div style={styles.subSection}>
           <Work />
-        </section>
-        <section style={styles.subSection}>
+        </div>
+        <div style={styles.subSection}>
           <Team />
-        </section>
-        <section style={styles.subSection}>
+        </div>
+        <div style={styles.subSection}>
           <Contact />
-        </section>
+        </div>
       </div>
     );
   }
@@ -83,12 +84,13 @@ const styles = {
   },
   cover: {
     height: '100%',
-    backgroundColor: '#262626',
+    backgroundColor: _dark,
     opacity: '0.8'
   },
   subSection: {
     position: 'absolute',
     height: '100%',
+    width: '100%',
     top: '100%',
   }
 }

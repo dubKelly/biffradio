@@ -1,5 +1,6 @@
 import React from 'react';
 import radium from '../lib/radiumConfig';
+import { _accent } from '../lib/variables';
 
 ///////   ///////  ///   //  //////    ///////  ///////
 //    //  //       ////  //  //   //   //       //    //
@@ -35,7 +36,7 @@ const styles = {
     width: '20px',
     top: '50%',
     left: '50%',
-    backgroundColor: '#33d9cb',
+    backgroundColor: _accent,
     transition: 'transform 0.4s ease-in-out'
   },
   hori: {

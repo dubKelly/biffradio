@@ -1,5 +1,6 @@
 import React from 'react';
 import radium from '../lib/radiumConfig';
+import { _accent } from '../lib/variables';
 
 ///////   ///////  ///   //  //////    ///////  ///////
 //    //  //       ////  //  //   //   //       //    //
@@ -21,7 +22,7 @@ const styles = {
   position: 'absolute',
   height: '200px',
   width: '200px',
-  border: '12px solid #33d9cb',
+  border: `12px solid ${_accent}`,
   top: '0',
   left: '50%',
   transform: 'translate(-50%, -60%) rotate(45deg)',

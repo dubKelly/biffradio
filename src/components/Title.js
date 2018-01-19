@@ -1,5 +1,6 @@
 import React from 'react';
 import radium from '../lib/radiumConfig';
+import { _accent } from '../lib/variables';
 
 ///////   ///////  ///   //  //////    ///////  ///////
 //    //  //       ////  //  //   //   //       //    //
@@ -47,7 +48,7 @@ const styles = {
     transform: 'translate(-127px, -21px)',
     height: '1px',
     width: '1px',
-    backgroundColor: '#33d9cb',
+    backgroundColor: _accent,
     opacity: '0',
     transition: 'all 0.25s ease-in-out',
     '@media only screen and (max-height: 400px)': {

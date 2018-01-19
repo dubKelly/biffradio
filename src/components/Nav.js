@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import shortid from 'shortid';
 import radium from '../lib/radiumConfig';
+import { _accent } from '../lib/variables';
 
 /*** modify loop for additional keys ***/
 let keys = [];
@@ -14,7 +15,7 @@ class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
-      
+
     }
   }
 
@@ -103,7 +104,7 @@ const styles = {
     color: 'white',
     transition: 'all 0.2s ease-in-out',
     ':hover': {
-      color: '#33d9cb'
+      color: _accent
     },
     true: {
       cursor: 'pointer',
