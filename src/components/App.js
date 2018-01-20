@@ -1,12 +1,16 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import Radium, { StyleRoot } from 'radium';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import store from '../store';
 
 import Home from '../components/Home';
 import About from '../components/About';
 
 const App = () => {
   return (
+    <Provider store={store}>
     <StyleRoot style={styles}>
       <Router>
         <Switch>
@@ -15,6 +19,7 @@ const App = () => {
         </Switch>
       </Router>
     </StyleRoot>
+    </Provider>
   );
 }
 

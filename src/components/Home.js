@@ -1,8 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import radium from '../lib/radiumConfig';
 import office_01_1920 from '../images/office_01_1920.jpeg';
 import handleScroll from '../lib/handleScroll';
 import { _dark } from '../lib/variables';
+
+import { toggleMenu } from '../actions/menuActions';
 
 import Diamond from './Diamond';
 import Ex from './Ex';
@@ -15,17 +18,24 @@ import Work from './Work';
 import Team from './Team';
 import Contact from './Contact';
 
-class Home extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      menu: false
-    }
+@connect((store) => {
+  return {
+    menu: store.menu.menu
   }
+})
 
+class Home extends React.Component {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     menu: false
+  //   }
+  // }
+  //
   toggleMenu() {
-    let menu = !this.state.menu;
-    this.setState({ menu });
+    // let menu = !this.state.menu;
+    // this.setState({ menu });
+    this.props.dispatch(toggleMenu());
   }
 
 ///////   ///////  ///   //  //////    ///////  ///////
@@ -39,12 +49,12 @@ class Home extends React.Component {
       <div style={styles.component}>
         <section style={styles.home} onWheel={handleScroll}>
           <div style={styles.cover}></div>
-          <Diamond menu={this.state.menu} />
-          <Ex menu={this.state.menu} />
-          <Title menu={this.state.menu} />
-          <Nav menu={this.state.menu} />
+          <Diamond menu={this.props.menu} />
+          <Ex menu={this.props.menu} />
+          <Title menu={this.props.menu} />
+          <Nav menu={this.props.menu} />
           <Burger
-            menu={this.state.menu}
+            menu={this.props.menu}
             toggleMenu={this.toggleMenu.bind(this)}
           />
           <RadioLink />
