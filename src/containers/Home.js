@@ -2,40 +2,34 @@ import React from 'react';
 import { connect } from 'react-redux';
 import radium from '../lib/radiumConfig';
 import office_01_1920 from '../images/office_01_1920.jpeg';
-import handleScroll from '../lib/handleScroll';
 import { _dark } from '../lib/variables';
 
-import { toggleMenu } from '../actions/menuActions';
+import { toggleMenu, handleScroll } from '../actions/uiActions';
 
-import Diamond from './Diamond';
-import Ex from './Ex';
-import Title from './Title';
-import Nav from './Nav';
-import Burger from './Burger';
-import RadioLink from './RadioLink';
-import About from './About';
-import Work from './Work';
-import Team from './Team';
-import Contact from './Contact';
+import Diamond from '../components/Diamond';
+import Ex from '../components/Ex';
+import Title from '../components/Title';
+import Nav from '../components/Nav';
+import Burger from '../components/Burger';
+import RadioLink from '../components/RadioLink';
+import About from '../components/About';
+import Work from '../components/Work';
+import Team from '../components/Team';
+import Contact from '../components/Contact';
 
 @connect((store) => {
   return {
-    menu: store.menu.menu
+    menu: store.ui.menu
   }
 })
 
 class Home extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     menu: false
-  //   }
-  // }
-  //
   toggleMenu() {
-    // let menu = !this.state.menu;
-    // this.setState({ menu });
     this.props.dispatch(toggleMenu());
+  }
+
+  handleScroll(e) {
+    this.props.dispatch(handleScroll(e));
   }
 
 ///////   ///////  ///   //  //////    ///////  ///////
@@ -47,7 +41,7 @@ class Home extends React.Component {
   render() {
     return (
       <div style={styles.component}>
-        <section style={styles.home} onWheel={handleScroll}>
+        <section style={styles.home} onWheel={this.handleScroll.bind(this)}>
           <div style={styles.cover}></div>
           <Diamond menu={this.props.menu} />
           <Ex menu={this.props.menu} />
@@ -84,7 +78,7 @@ class Home extends React.Component {
 
 const styles = {
   component: {
-    height: '100%'
+    height: '100%',
   },
   home: {
     backgroundImage: `url(${office_01_1920})`,

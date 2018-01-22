@@ -72,30 +72,30 @@ const styles = {
   li: {
     opacity: '0',
     transition: 'all 0.3 ease-in-out',
-    true: {
+    open: {
       opacity: '1'
     }
   },
   nthChild_1: {
-    true: {
+    open: {
       transform: 'translateX(-57px)',
       transition: 'all 0.3s 0.1s ease-in-out'
     }
   },
   nthChild_2: {
-    true: {
+    open: {
       transform: 'translateX(-57px)',
       transition: 'all 0.3s 0.2s ease-in-out'
     }
   },
   nthChild_3: {
-    true: {
+    open: {
       transform: 'translateX(-57px)',
       transition: 'all 0.3s 0.3s ease-in-out'
     }
   },
   nthChild_4: {
-    true: {
+    open: {
       transform: 'translateX(-57px)',
       transition: 'all 0.3s 0.4s ease-in-out'
     }
@@ -106,7 +106,7 @@ const styles = {
     ':hover': {
       color: _accent
     },
-    true: {
+    open: {
       cursor: 'pointer',
     }
   }

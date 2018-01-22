@@ -27,7 +27,8 @@ const About = () => {
 
 const styles = {
   component: {
-    height: '100%'
+    height: '100%',
+    top: '-100%'
   },
   buffer: {
     position: 'absolute',

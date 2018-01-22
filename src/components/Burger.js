@@ -41,13 +41,13 @@ const styles = {
   },
   hori: {
     transform: 'translate(-50%, -50%)',
-    true: {
+    open: {
       transform: 'translate(-50%, -50%) rotate(-135deg) scale(1.5, 1)'
     }
   },
   vert: {
     transform: 'translate(-50%, -50%) rotate(90deg)',
-    true: {
+    open: {
       transform: 'translate(-50%, -50%) rotate(-45deg) scale(1.5, 1)'
     }
   },

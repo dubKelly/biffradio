@@ -40,7 +40,7 @@ const styles = {
   },
   pos: {
     transform: 'translateX(-50%) rotate(45deg)',
-    true: {
+    open: {
       transform: 'translateX(-50%) rotate(45deg) scale(14, 1)',
       '@media only screen and (max-height: 400px)': {
         opacity: '0.3'
@@ -49,7 +49,7 @@ const styles = {
   },
   neg: {
     transform: 'translateX(-50%) rotate(-45deg)',
-    true: {
+    open: {
       transform: 'translateX(-25%) rotate(45deg) scale(3, 1)',
       '@media only screen and (max-height: 400px)': {
         opacity: '0.3'

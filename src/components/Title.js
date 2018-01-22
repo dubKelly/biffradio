@@ -33,7 +33,7 @@ const styles = {
     fontWeight: '700',
     color: 'white',
     transition: 'transform 0.4s ease-in-out',
-    true: {
+    open: {
       transform: 'translate(-100%, -150%)',
       '@media only screen and (max-height: 400px)': {
         transform: 'translate(-150%, -225%)'

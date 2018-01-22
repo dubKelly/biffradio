@@ -30,7 +30,7 @@ const styles = {
   '@media only screen and (max-height: 400px)': {
     transform: 'translate(-50%, -80%) rotate(45deg)',
   },
-  true: {
+  open: {
     transform: 'translate(30%, 20%) rotate(45deg)',
     '@media only screen and (max-height: 400px)': {
       transform: 'translate(0, -30%) rotate(45deg)',
