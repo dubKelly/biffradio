@@ -7,7 +7,7 @@ import { _accent } from '../lib/variables';
 /*** modify loop for additional keys ***/
 let keys = [];
 
-for (var i = 0; i < 4; i++) {
+for (let i = 0; i < 4; i++) {
   keys.push(shortid.generate());
 }
 

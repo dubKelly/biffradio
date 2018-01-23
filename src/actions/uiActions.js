@@ -27,18 +27,23 @@ export const handleScroll = (e) => {
 
       let subSections = getState().ui.subSections;
       let sectionIndex = getState().ui.sectionIndex;
+      let target;
 
-      if (e.deltaY > 0) {
+      // scroll down
+      if (e.deltaY > 0 && sectionIndex <= 2) {
         sectionIndex++;
+        target = Object.keys(subSections)[sectionIndex];
+
+        dispatch(setFocus(target, sectionIndex));
+        console.log(target, sectionIndex, subSections);
       }
-      else if (e.deltaY < 0) {
+      if (e.deltaY < 0 && sectionIndex >= 0) {
+        target = Object.keys(subSections)[sectionIndex];
         sectionIndex--;
+
+        dispatch(setFocus(target, sectionIndex));
+        console.log(target, sectionIndex, subSections);
       }
-
-      let target = Object.keys(subSections)[sectionIndex];
-
-      dispatch(setFocus(target, sectionIndex));
-      console.log(target, subSections);
 
       const resetScrolling = setTimeout(() => {
         clearTimeout(resetScrolling);
