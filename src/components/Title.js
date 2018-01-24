@@ -54,7 +54,7 @@ const styles = {
     '@media only screen and (max-height: 400px)': {
       transform: 'translate(-189px, -68px)'
     },
-    true: {
+    open: {
       transform: 'translate(-101px, -21px) scale(52, 1)',
       opacity: '1',
       transition: 'all 0.3s 0.2s ease-in-out',

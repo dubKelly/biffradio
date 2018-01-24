@@ -30,18 +30,74 @@ class Nav extends React.Component {
       <div style={styles.navMenu}>
         <ul>
           <Link to="/about">
-            <li style={[styles.li, styles.li[this.props.menu], styles.nthChild_1[this.props.menu]]}>
-              <span key={keys[0]} style={[styles.span, styles.span[this.props.menu]]}>About Us</span>
+            <li
+              style={[
+                styles.li,
+                styles.li[this.props.menu],
+                styles.nthChild_1[this.props.menu]
+              ]}
+            >
+              <span
+                key={keys[0]}
+                style={[
+                  styles.span,
+                  styles.span[this.props.menu]
+                ]}
+              >
+                About Us
+              </span>
             </li>
           </Link>
-          <li style={[styles.li, styles.li[this.props.menu], styles.nthChild_2[this.props.menu]]}>
-            <span key={keys[1]} style={[styles.span, styles.span[this.props.menu]]}>Our Work</span>
+          <li
+            style={[
+              styles.li,
+              styles.li[this.props.menu],
+              styles.nthChild_2[this.props.menu]
+            ]}
+          >
+            <span
+              key={keys[1]}
+              style={[
+                styles.span,
+                styles.span[this.props.menu]
+              ]}
+            >
+              Our Work
+            </span>
           </li>
-          <li style={[styles.li, styles.li[this.props.menu], styles.nthChild_3[this.props.menu]]}>
-            <span key={keys[2]} style={[styles.span, styles.span[this.props.menu]]}>Meet the Team</span>
+          <li
+            style={[
+              styles.li,
+              styles.li[this.props.menu],
+              styles.nthChild_3[this.props.menu]
+            ]}
+          >
+            <span
+              key={keys[2]}
+              style={[
+                styles.span,
+                styles.span[this.props.menu]
+              ]}
+            >
+              Meet the Team
+            </span>
           </li>
-          <li style={[styles.li, styles.li[this.props.menu], styles.nthChild_4[this.props.menu]]}>
-            <span key={keys[3]} style={[styles.span, styles.span[this.props.menu]]}>Contact Us</span>
+          <li
+            style={[
+              styles.li,
+              styles.li[this.props.menu],
+              styles.nthChild_4[this.props.menu]
+            ]}
+          >
+            <span
+              key={keys[3]}
+              style={[
+                styles.span,
+                styles.span[this.props.menu]
+              ]}
+            >
+              Contact Us
+            </span>
           </li>
         </ul>
       </div>

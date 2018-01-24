@@ -35,14 +35,14 @@ export const handleScroll = (e) => {
         target = Object.keys(subSections)[sectionIndex];
 
         dispatch(setFocus(target, sectionIndex));
-        console.log(target, sectionIndex, subSections);
       }
+
+      // scroll up
       if (e.deltaY < 0 && sectionIndex >= 0) {
         target = Object.keys(subSections)[sectionIndex];
         sectionIndex--;
 
         dispatch(setFocus(target, sectionIndex));
-        console.log(target, sectionIndex, subSections);
       }
 
       const resetScrolling = setTimeout(() => {
