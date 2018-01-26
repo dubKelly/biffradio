@@ -15,7 +15,12 @@ const App = () => {
       <Router>
         <Switch>
           <Route path={'/'} exact component={Home} />
-          <Route path={'/about'} component={About} />
+          <Route path={'/about'} render={(props) =>
+            <About {...props}
+              navigation="pathName"
+              focus="focus"
+            />
+          }/>
         </Switch>
       </Router>
     </StyleRoot>
