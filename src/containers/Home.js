@@ -19,6 +19,7 @@ import Contact from '../components/Contact';
 
 @connect((store) => {
   return {
+    ui: store.ui,
     menu: store.ui.menu,
     subSections: store.ui.subSections
   }
@@ -44,7 +45,7 @@ class Home extends React.Component {
       <div style={styles.component}>
         <section style={styles.home} onWheel={this.handleScroll.bind(this)}>
           <div style={styles.cover}></div>
-          <Diamond menu={this.props.menu} />
+          <Diamond instance="home_01" ui={this.props.ui} />
           <Ex menu={this.props.menu} />
           <Title menu={this.props.menu} />
           <Nav menu={this.props.menu} />
@@ -55,7 +56,10 @@ class Home extends React.Component {
           <RadioLink />
         </section>
         <div style={styles.subSection}>
-          <About focus={this.props.subSections.about.focus} handleScroll={this.handleScroll.bind(this)}/>
+          <About
+            ui={this.props.ui}
+            handleScroll={this.handleScroll.bind(this)}
+          />
         </div>
         <div style={styles.subSection}>
           <Work />

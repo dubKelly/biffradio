@@ -1,6 +1,9 @@
 const uiReducer = (state = {
   subSections: {
-    about: {
+    about_sect_01: {
+      focus: false
+    },
+    about_sect_02: {
       focus: false
     },
     work: {
@@ -13,9 +16,18 @@ const uiReducer = (state = {
       focus: false
     },
   },
+  // subSections: [
+  //   'home',
+  //   'about_sect_01',
+  //   'about_sect_02',
+  //   'work',
+  //   'team',
+  //   'contact'
+  // ],
   sectionIndex: -1,
+  scrolling: false,
   menu: false,
-  scrolling: false
+  focus: 'home'
 }, action) => {
 
   switch (action.type) {
@@ -29,12 +41,14 @@ const uiReducer = (state = {
       let target = action.payload.target;
 
       return {
+        // ...state,
+        // focus: action.payload.target,
         ...state,
         subSections: {
           ...state.subSections,
           [target]: {
             ...state.subSections[target],
-            focus: !state.subSections[target].focus ? 'focus' : false
+            focus: !state.subSections[target].focus ? [target] : false
           }
         },
         sectionIndex: action.payload.sectionIndex

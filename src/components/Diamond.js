@@ -13,7 +13,13 @@ class Diamond extends React.Component {
 
   componentWillMount() {
     this.getStyles();
+    console.log(this.props);
   }
+
+  // componentWillReceiveProps() {
+  //   this.getStyles();
+  //   console.log(this.props);
+  // }
 
   ///////   ///////  ///   //  //////    ///////  ///////
   //    //  //       ////  //  //   //   //       //    //
@@ -25,8 +31,9 @@ class Diamond extends React.Component {
     return <div
       style={[
         this.state.styles,
-        this.state.styles[this.props.menu],
-        this.state.styles[this.props.focus]
+        this.state.styles[this.props.ui.menu],
+        this.state.styles[this.props.ui.subSections.about_sect_01.focus],
+        this.state.styles[this.props.ui.subSections.about_sect_02.focus]
       ]}
     ></div>;
   }
@@ -43,15 +50,18 @@ class Diamond extends React.Component {
         _border,
         _transition,
         _transform,
-        _focus;
+        _focus,
+        _focus_02;
 
-    switch(this.props.section) {
+    switch(this.props.instance) {
       case 'about_01':
         _height = '55px';
         _top = '50%';
         _border = '6px solid white';
         _transition = 'all 0.6s 0.2s ease-in-out';
         _transform = 'translate(-50%, -50%) rotate(45deg)';
+        _focus = 'translate(-50%, -50%) rotate(45deg)';
+        _focus_02 = 'translate(-50%, -280%) rotate(45deg)';
         break;
       case 'about_02':
         _height = '144px';
@@ -60,6 +70,7 @@ class Diamond extends React.Component {
         _transform = 'translate(-50%, -182%) rotate(45deg)';
         _transition = 'all 1s 0.2s ease-out';
         _focus = 'translate(-50%, -102%) rotate(45deg)';
+        _focus_02 = 'translate(-50%, -102%) rotate(45deg)';
         break;
       case 'about_03':
         _height = '233px';
@@ -68,6 +79,7 @@ class Diamond extends React.Component {
         _transform = 'translate(-50%, 90%) rotate(45deg)';
         _transition = 'all 1s 0.2s ease-out';
         _focus = 'translate(-50%, 10%) rotate(45deg)';
+        _focus_02 = 'translate(-50%, -173%) rotate(45deg)';
         break;
       default:
         _height = '200px';
@@ -96,8 +108,11 @@ class Diamond extends React.Component {
           opacity: '0.3'
         }
       },
-      focus: {
+      about_sect_01: {
         transform: _focus
+      },
+      about_sect_02: {
+        transform: _focus_02
       }
     }
 

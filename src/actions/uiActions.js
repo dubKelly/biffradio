@@ -27,13 +27,21 @@ export const handleScroll = (e) => {
 
       let subSections = getState().ui.subSections;
       let sectionIndex = getState().ui.sectionIndex;
+      // const subSections = [
+      //   'about_sect_01',
+      //   'about_sect_02',
+      //   'work',
+      //   'team',
+      //   'contact'
+      // ];
+      // let sectionIndex = -1;
       let target;
 
       // scroll down
-      if (e.deltaY > 0 && sectionIndex <= 2) {
+      if (e.deltaY > 0 && sectionIndex <= 3) {
         sectionIndex++;
         target = Object.keys(subSections)[sectionIndex];
-
+        console.log(target);
         dispatch(setFocus(target, sectionIndex));
       }
 
@@ -41,7 +49,7 @@ export const handleScroll = (e) => {
       if (e.deltaY < 0 && sectionIndex >= 0) {
         target = Object.keys(subSections)[sectionIndex];
         sectionIndex--;
-
+        console.log(target);
         dispatch(setFocus(target, sectionIndex));
       }
 

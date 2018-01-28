@@ -18,7 +18,7 @@ const App = () => {
           <Route path={'/about'} render={(props) =>
             <About {...props}
               navigation="pathName"
-              focus="focus"
+              subSections="focus"
             />
           }/>
         </Switch>
