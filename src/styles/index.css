@@ -53,3 +53,6 @@ html, body, section, #root {
   overflow: hidden;
   font-family: 'Montserrat', sans-serif;
 }
+.z {
+	-webkit-transform: translateZ(0);
+}

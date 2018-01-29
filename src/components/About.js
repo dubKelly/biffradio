@@ -4,7 +4,7 @@ import radium from '../lib/radiumConfig';
 import { _light, _dark, _accent } from '../lib/variables';
 
 import Diamond from '../components/Diamond';
-import About_01 from '../components/About01';
+import About01 from '../components/About01';
 
 // @connect((store) => {
 //   return {
@@ -35,12 +35,14 @@ class About extends React.Component {
     return (
       <div style={styles.component}>
         <div
+          className="z"
           style={[
             styles.buffer,
             styles.buffer[this.props.ui.subSections.about_sect_01.focus]
           ]}
         ></div>
         <section
+          className="z"
           style={[
             styles.about,
             styles.about[this.props.ui.subSections.about_sect_01.focus]
@@ -50,7 +52,7 @@ class About extends React.Component {
           <Diamond instance="about_02" ui={this.props.ui} />
           <Diamond instance="about_03" ui={this.props.ui} />
         </section>
-        <About_01
+        <About01
           ui={this.props.ui}
           handleScroll={this.props.handleScroll}
         />
@@ -115,6 +117,7 @@ class About extends React.Component {
         height: '100%',
         width: '100%',
         backgroundColor: _light,
+        willChange: 'transform',
         transition: 'transform 0.4s 0.1s ease-in-out',
         about_sect_01: {
           transform: 'translateY(-100%)'
@@ -123,6 +126,7 @@ class About extends React.Component {
       about: {
         position: 'absolute',
         backgroundColor: _accent,
+        willChange: 'transform',
         transition: 'transform 0.5s 0.2s ease-in-out',
         about_sect_01: {
           transform: 'translateY(-100%)'

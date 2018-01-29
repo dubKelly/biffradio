@@ -58,7 +58,7 @@ class Diamond extends React.Component {
         _height = '55px';
         _top = '50%';
         _border = '6px solid white';
-        _transition = 'all 0.6s 0.2s ease-in-out';
+        _transition = 'transform 0.6s 0.2s ease-in-out';
         _transform = 'translate(-50%, -50%) rotate(45deg)';
         _focus = 'translate(-50%, -50%) rotate(45deg)';
         _focus_02 = 'translate(-50%, -280%) rotate(45deg)';
@@ -68,7 +68,7 @@ class Diamond extends React.Component {
         _top = '50%';
         _border = '1px solid white';
         _transform = 'translate(-50%, -182%) rotate(45deg)';
-        _transition = 'all 1s 0.2s ease-out';
+        _transition = 'transform 1s 0.2s ease-out';
         _focus = 'translate(-50%, -102%) rotate(45deg)';
         _focus_02 = 'translate(-50%, -102%) rotate(45deg)';
         break;
@@ -77,7 +77,7 @@ class Diamond extends React.Component {
         _top = '50%';
         _border = '6px solid white';
         _transform = 'translate(-50%, 90%) rotate(45deg)';
-        _transition = 'all 1s 0.2s ease-out';
+        _transition = 'transform 1s 0.2s ease-out';
         _focus = 'translate(-50%, 10%) rotate(45deg)';
         _focus_02 = 'translate(-50%, -173%) rotate(45deg)';
         break;
@@ -85,8 +85,9 @@ class Diamond extends React.Component {
         _height = '200px';
         _top = '0';
         _border = `12px solid ${_accent}`;
-        _transition = 'all 0.4s ease-in-out';
+        _transition = 'transform 0.4s ease-in-out';
         _transform = 'translate(-50%, -60%) rotate(45deg)';
+        _focus = _transform;
     }
 
     const styles = {
@@ -97,6 +98,7 @@ class Diamond extends React.Component {
       top: _top,
       left: '50%',
       transform: _transform,
+      willChange: 'transform',
       transition: _transition,
       '@media only screen and (max-height: 400px)': {
         transform: 'translate(-50%, -80%) rotate(45deg)',

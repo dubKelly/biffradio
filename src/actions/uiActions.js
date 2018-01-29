@@ -41,7 +41,6 @@ export const handleScroll = (e) => {
       if (e.deltaY > 0 && sectionIndex <= 3) {
         sectionIndex++;
         target = Object.keys(subSections)[sectionIndex];
-        console.log(target);
         dispatch(setFocus(target, sectionIndex));
       }
 
@@ -49,7 +48,6 @@ export const handleScroll = (e) => {
       if (e.deltaY < 0 && sectionIndex >= 0) {
         target = Object.keys(subSections)[sectionIndex];
         sectionIndex--;
-        console.log(target);
         dispatch(setFocus(target, sectionIndex));
       }
 

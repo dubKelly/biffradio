@@ -8,7 +8,8 @@ const About01 = (props) => {
       onWheel={props.handleScroll}
       style={[
         styles.subSection,
-        styles.subSection[props.ui.subSections.about_sect_01.focus]
+        styles.subSection[props.ui.subSections.about_sect_01.focus],
+        styles.subSection[props.ui.subSections.about_sect_02.focus]
       ]}
     >
       <h2 style={styles.heading}>We<br />Give A<br />Shit.</h2>
@@ -29,8 +30,12 @@ const About01 = (props) => {
 const styles = {
   subSection: {
     position: 'absolute',
+    // transition: 'all 0.5s 0.2s ease-in-out',
     about_sect_01: {
       transform: 'translateY(-100%)'
+    },
+    about_sect_02: {
+      transform: 'translateY(-200%)'
     }
   },
   heading: {
